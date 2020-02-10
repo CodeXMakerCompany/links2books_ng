@@ -1,0 +1,7 @@
+.page-footer {
+    color: white;
+    background-color: #4F7E97!important;
+    -webkit-box-shadow: -1px -4px 7px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px -4px 7px -2px rgba(0,0,0,0.75);
+    box-shadow: -1px -4px 7px -2px rgba(0,0,0,0.75);
+}

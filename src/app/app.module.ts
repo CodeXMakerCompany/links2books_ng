@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//AnimacionRutas
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 //Rutas
 import { routing, appRoutingProviders } from "./app.routing";
 
@@ -13,6 +16,9 @@ import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-
 import { DashboardAsistenteComponent } from './components/dashboard-asistente/dashboard-asistente.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
+import { ErrorComponent } from './components/error/error.component';
+import { NavbarComponent } from './components/global/navbar/navbar.component';
+import { FooterComponent } from './components/global/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +30,14 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     DashboardAdminComponent,
     DashboardAsistenteComponent,
     CarritoComponent,
-    TiendaComponent
+    TiendaComponent,
+    ErrorComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     routing
   ],
   providers: [

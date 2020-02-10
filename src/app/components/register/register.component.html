@@ -1,1 +1,140 @@
-<p>register works!</p>
+<body class="text-center bg-white">
+
+	<div class="modal fade" id="terminos-modal" tabindex="-1" role="dialog" aria-labelledby="terminos-modal-label" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 90% !important; width: 90% !important;" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="terminos-modal-label"><i class="fas fa-file-alt"></i><strong> Términos y condiciones</strong></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+                        <div class="col-md-12 mb-3">
+                            <div class="container">
+                                <iframe src="terminos-y-condiciones.php" height="500" width="100%" style="border:0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+
+	    <!-- Alert Tiempo EMail -->
+    	<div class="row">
+                        <div class="col-xs-12 col-md-12 mt-2">
+
+                        </div>
+                    </div>
+	    <br>
+	    <br>
+
+	    <div class="row">
+			<div class="col-xs-12 col-md-12">
+				<img class="mb-5" src="../../assets/logos/sitio_logo_contraste.png" alt="" width="200px" height="200px">
+			    <img src="sistema/img/sitio_logo_contraste_365x180.png">
+				<!--<h1 class="h3 mb-5 font-weight-normal"><strong>Links2Books</strong></h1>-->
+				<h1 class="h3 mb-5 font-weight-normal">Registrarse como <strong>alumno</strong> en <strong>MYSCHOOL</strong></h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<form id="form-usuario">
+					<div class="form-row">
+						<div class="col-md-4 mb-3">
+							<label for="usuario-nombre">Nombre(s)</label>
+							<input type="text" class="form-control" id="usuario-nombre" name="usuario-nombre" placeholder="Nombre" value="">
+							<div class="invalid-feedback">Por favor completa este campo</div>
+						</div>
+						<div class="col-md-4 mb-3">
+							<label for="usuario-apellido-paterno">Apellido Paterno</label>
+							<input type="text" class="form-control" id="usuario-apellido-paterno" name="usuario-apellido-paterno" placeholder="Apellido Paterno" value="">
+							<div class="invalid-feedback">Por favor completa este campo</div>
+						</div>
+						<div class="col-md-4 mb-3">
+							<label for="usuario-apellido-materno">Apellido Materno</label>
+							<input type="text" class="form-control" id="usuario-apellido-materno" name="usuario-apellido-materno" placeholder="Apellido Materno" value="">
+							<div class="invalid-feedback">Por favor completa este campo</div>
+						</div>
+					</div>
+					<br>
+					<div class="form-row">
+							<div class="col-md-2 mb-3"></div>
+                            <div class="col-md-4 mb-3">
+                                <label for="usuario-matricula">Matrícula</label>
+                                <input type="text" class="form-control" id="usuario-matricula" name="usuario-matricula" placeholder="Matrícula" value="">
+                                <div class="invalid-feedback">Por favor completa este campo</div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3" style="padding-right:2px;">
+                                        <label for="usuario-lada" type="tel">Lada</label>
+                                        <input class="form-control" id="usuario-lada" name="usuario-lada" placeholder="Lada" value="" type="text" maxlength="3" onkeypress="return validarDatosNumericos(event)">
+                                        <div class="invalid-feedback">Por favor completa este campo</div>
+                                    </div>
+                                    <div class="col-md-8 mb-3" style="padding-left:2px;">
+                                        <label for="usuario-telefono" type="tel">Teléfono</label>
+                                        <input type="text" class="form-control" id="usuario-telefono" name="usuario-telefono" placeholder="Telefono" value="" maxlength="8" onkeypress="return validarDatosNumericos(event)">
+                                        <div class="invalid-feedback">Por favor completa este campo</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3"></div>
+                    </div>
+					<br>
+					<div class="form-row justify-content-md-center">
+						<div class="col-md-4 mb-3">
+							<label for="usuario-login">Correo Electrónico</label>
+							<input type="text" class="form-control is-valid" id="usuario-login" name="usuario-login" placeholder="Correo Electrónico" value="" onpaste="return false;">
+							<div class="valid-feedback">Validaremos que este disponible...</div>
+							<div class="invalid-feedback" id="usuario-login-mensaje"></div>
+				    	</div>
+						<div class="col-md-4 mb-3">
+							<label for="usuario-login-confirmar">Confirmar Correo Electrónico</label>
+							<input type="text" class="form-control is-invalid" id="usuario-login-confirmar" name="usuario-login-confirmar" placeholder="Confirmar Correo Electrónico" value="" onpaste="return false;">
+							<div class="invalid-feedback">Debe coincidir con el correo electrónico anterior</div>
+						</div>
+					</div>
+					<br>
+					<div class="form-row justify-content-md-center">
+						<div class="col-md-4 mb-3">
+							<label for="usuario-clave">Contraseña</label>
+							<input type="password" class="form-control is-valid" id="usuario-clave" name="usuario-clave" placeholder="Contraseña" value="" onpaste="return false;">
+							<div class="invalid-feedback">Mínimo 6 caracteres</div>
+						</div>
+						<div class="col-md-4 mb-3">
+							<label for="usuario-clave-confirmar">Confirmar Contraseña</label>
+							<input type="password" class="form-control is-invalid" id="usuario-clave-confirmar" name="usuario-clave-confirmar" placeholder="Confirmar Contraseña" value="" onpaste="return false;">
+							<div class="invalid-feedback">Debe coincidir con la contraseña anterior</div>
+						</div>
+					</div>
+					<br>
+					<div class="form-group text-center">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="usuario-terminos-condiciones" name="usuario-terminos-condiciones">
+							<label class="form-check-label" for="usuario-terminos-condiciones" data-toggle="modal" data-target="#terminos-modal">
+								<p><u>Acepto los términos y condiciones</u></p>
+							</label>
+						</div>
+					</div>
+					<button class="btn btn-primary" type="submit"><i class="fas fa-graduation-cap"></i> Registrar</button>
+				</form>
+				<br>
+				<button type="button" class="btn btn-link" id="cancelar-registro" [routerLink]="['/login']"><i class="fas fa-arrow-left"></i> Cancelar y regresar a la página de login</button>
+			</div>
+		</div>
+
+		<br>
+		<br>
+
+	</div>
+
+</body>
