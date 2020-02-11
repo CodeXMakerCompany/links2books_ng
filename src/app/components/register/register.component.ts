@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
 
     //Validar ruta con parametro
     if (res[2]) {
+      //Flag para comenzar a cargar los datos del parent.
       this.parent = true;
       //Split a la ruta para dividir por diagonales
       console.log(res[2]);
