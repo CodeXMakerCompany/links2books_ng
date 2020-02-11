@@ -23,15 +23,24 @@ import { ErrorComponent } from "./components/error/error.component";
 
 //Definir rutas
 //Notas: atributo data instancia la animacion de la ruta
+// /:parent is an atribute that receives a name and a chargues the route this is an optional value atribute
+// but it will help us to get the parent so in the component we should detect the route
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'inicio', component: LoginComponent, data: { animation: 'isRight' } },
+  {path: 'login/:parent', component: LoginComponent, data: { animation: 'isLeft' } },
   {path: 'login', component: LoginComponent, data: { animation: 'isLeft' } },
+  {path: 'registro/:parent', component: RegisterComponent, data: { animation: 'isRight' } },
   {path: 'registro', component: RegisterComponent, data: { animation: 'isRight' } },
+  {path: 'dashboard_alumno/:parent', component: DashboardAlumnoComponent, data: { animation: 'isRight' }},
   {path: 'dashboard_alumno', component: DashboardAlumnoComponent, data: { animation: 'isRight' }},
+  {path: 'dashboard_coordinador/:parent', component: DashboardCoordinadorComponent, data: { animation: 'isRight' }},
   {path: 'dashboard_coordinador', component: DashboardCoordinadorComponent, data: { animation: 'isRight' }},
+  {path: 'dashboard_asistente/:parent', component: DashboardAsistenteComponent, data: { animation: 'isRight' }},
   {path: 'dashboard_asistente', component: DashboardAsistenteComponent, data: { animation: 'isRight' }},
+  {path: 'dashboard_admin/:parent', component: DashboardAdminComponent, data: { animation: 'isRight' }},
   {path: 'dashboard_admin', component: DashboardAdminComponent, data: { animation: 'isRight' }},
+  {path: 'tienda/:parent', component: TiendaComponent, data: { animation: 'isRight' }},
   {path: 'tienda', component: TiendaComponent, data: { animation: 'isRight' }},
   {path: '**', component: ErrorComponent, data: { animation: 'isRight' }}
 ];
