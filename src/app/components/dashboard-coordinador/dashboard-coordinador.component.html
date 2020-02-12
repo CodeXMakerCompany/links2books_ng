@@ -1,5 +1,324 @@
 <app-navbar></app-navbar>
 
-<p>dashboard-coordinador works!</p>
+<div class="container-fluid">
+  <br>
+  <div class="row">
+      <div class="col-xs-12 col-md-12 mb-4">
+          <div class="card shadow">
+              <div class="card-header">
+                  <h5>
+                      <i class="fas fa-dolly-flatbed"></i>
+                      <strong> Mis pedidos</strong>
+                  </h5>
+              </div>
+              <!-- end card header -->
+              <div class="card-body">
+                  <div class="panel-body">
+                      <div class="row">
+                          <div class="col-xl-12 col-md-12">
+                              <div class="form-group">
+
+                                  <!-- Seleccion escuela -->
+                                  <div class="col-xl-12 col-md-12 mb-4">
+                                      <label style="padding-left:20px;"> <strong>Escuela</strong></label>
+                                      <div class="row col-md-12">
+                                        <div class="col-xl-8 mb-4">
+                                            <select name="escuela-select" id="escuela-select" class="form-control selectpicker" data-show-subtext="true" data-live-search="true"></select>
+                                        </div>
+                                        <div class="col-xl-4 text-center mb-4">
+                                            <button class="btn btn-primary global_btn" id="nuevo-pedido-btn" type="button" data-toggle="modal" data-target="#modal_pedido" disabled>
+                                                <i class="fas fa-dolly-flatbed"></i> Realizar Nuevo Pedido
+                                            </button>
+                                        </div>
+                                      </div>
+                                      <!-- Fin seleccion escuela -->
+
+                                        <br>
+
+                                      <div class="col-md-12 row mt-3 mb-3">
+
+                                          <!-- Header section -->
+                                          <div class="container col-md-12">
+                                            <div class="text-center">
+                                              <hr>
+                                              <h5><i class="fas fa-truck icon_stl"></i> Filtrar pedidos por fechas (opcional)</h5>
+                                              <hr>
+                                            </div>
+                                          </div>
+                                          <!-- End header section -->
+
+                                          <!-- Filtro por fechas section -->
+                                          <div class="container col-md-12">
+                                            <div class="text-center row">
+                                              <div class="col-md-6 col-sm-6">
+                                                  <!-- Calendar start-->
+                                                  <div class="text-center">
+
+                                                      <div class="card calendarInicio_pedidos col-md-12">
+                                                          <div class="item-hints">
+                                                              <div class="hint" data-position="4">
+                                                                  <!-- is-hint -->
+                                                                  <span class="hint-radius"></span>
+                                                                  <span class="hint-dot">
+                                                                      <br>
+                                                                      <i class="fas fa-calendar-alt fa-3x animated infinite pulse delay-2s calendar_stl"></i>
+                                                                  </span>
+                                                                  <div class=" text-center hint-content do--split-children text-left" style="color:#f8942d; text-shadow: 0 0 3px #000;">
+                                                                      <p>Haz click.</p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+
+                                                          <div class="card-text">
+                                                              <div class="text-center">
+                                                                  <!-- <i class="fas fa-exclamation-circle" style="color: #4F7E97;"></i> Selecciona una fecha inicial. -->
+                                                                  <div id="namer">
+                                                                      <div id="namer-input">
+                                                                         <input class="form-control" id="calendarioFechaInicial_pedidos"  type="text" name="namername" placeholder="Fecha inicial">
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+
+                                                      </div>
+
+                                                  </div>
+                                                  <!--Calendar end-->
+                                              </div>
+                                              <div class="col-md-6 col-sm-6">
+                                                  <!-- Calendar start-->
+                                                  <div class="text-center">
+
+                                                      <div class="card calendarFinal_pedidos col-md-12">
+                                                          <div class="item-hints">
+                                                              <div class="hint" data-position="4">
+                                                                  <!-- is-hint -->
+                                                                  <span class="hint-radius"></span>
+                                                                  <span class="hint-dot">
+                                                                      <br>
+                                                                      <i class="fas fa-calendar-alt fa-3x animated infinite pulse delay-2s calendar_stl"></i>
+                                                                  </span>
+                                                                  <div class="text-center hint-content do--split-children text-left" style="color:#f8942d; text-shadow: 0 0 3px #000;">
+                                                                      <p>Haz click.</p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+
+                                                          <div class="card-text">
+                                                              <div class="text-center">
+                                                                  <div id="namer">
+                                                                      <div id="namer-input">
+                                                                         <input type="text" class="form-control" id="calendarioFechaFinal_pedidos" name="namername" placeholder="Fecha final">
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+
+                                                      </div>
+
+                                                  </div>
+                                                  <!--Calendar end-->
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Final filtro por fechas section -->
+                                      </div>
+
+                                      <!-- Botones de busqueda -->
+                                      <div class="row justify-content-center">
+                                          <p class="text-center mr-4">
+                                              <button class="btn btn-primary global_btn" id="btn-filtrar-pedidos-fechas" type="button">
+                                                  <i class="fas fa-dolly-flatbed"></i> Filtrar por fechas
+                                              </button>
+                                          </p>
+                                          <p class="text-center mr-5">
+                                              <button class="btn btn-primary global_btn" id="btn-filtrar-pedidos-todos" type="button">
+                                                  <i class="fas fa-dolly-flatbed"></i> Mostrar todos
+                                              </button>
+                                          </p>
+                                      </div>
+                                      <!-- Fin de botones de busqueda -->
+
+
+
+                                  </div>
+                                  <!-- Container detalles de pedidos -->
+                                  <div class="row">
+                                      <div class="col-xl-12 col-md-12 mb-4">
+
+                                          <div class="row justify-content-md-center">
+
+                                              <div class="col-md-12">
+
+                                                  <div class="row" id="container-pedidos" style="overflow: auto">
+                                                      <hr>
+                                                  </div>
+
+                                                  <div class="row" id="container-pedidos-detalles" style="overflow: auto"></div>
+
+                                              </div>
+
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!-- Final de container detalles de pedidos -->
+
+                              </div>
+                          </div>
+                      </div>
+                      <!--continuar-->
+
+                     <div class="row" id="contenedor-tablas"> </div>
+
+
+                     <div class="row">
+                         <div class="col-xl-12 col-md-12">
+                             <div class="form-group">
+
+                                 <!-- Seleccion Movimientos por nivel y libro -->
+                                 <div class="col-xl-12 col-md-12">
+                                     <div class="col-md-12 row mt-3 mb-3">
+
+                                       <!-- Header section -->
+                                       <div class="container col-md-12">
+                                         <div class="text-center">
+                                           <hr>
+                                           <h5><i class="fas fa-truck icon_stl"></i> Movimientos por nivel y libro</h5>
+                                           <hr>
+                                         </div>
+                                       </div>
+                                       <!-- End header section -->
+
+                                         <!-- Filtro por fechas section -->
+                                         <div class="container col-md-12">
+                                           <div class="text-center row">
+                                             <div class="col-md-6 col-sm-6">
+                                                 <!-- Calendar start-->
+                                                 <div class="text-center">
+
+                                                     <div class="card calendarInicio col-md-12">
+                                                         <div class="item-hints">
+                                                             <div class="hint" data-position="4">
+                                                                 <!-- is-hint -->
+                                                                 <span class="hint-radius"></span>
+                                                                 <span class="hint-dot">
+                                                                     <br>
+                                                                     <i class="fas fa-calendar-alt fa-3x animated infinite pulse delay-2s calendar_stl"></i>
+                                                                 </span>
+                                                                 <div class="text-center text-hint-content do--split-children text-left" style="color:#f8942d; text-shadow: 0 0 3px #000;">
+                                                                     <p>Haz click.</p>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="card-text">
+                                                             <div class="text-center">
+                                                                 <!-- <i class="fas fa-exclamation-circle" style="color: #4F7E97;"></i> Selecciona una fecha inicial. -->
+                                                                 <div id="namer">
+                                                                     <div id="namer-input">
+                                                                         <input id="calendarioFechaInicial" type="text" name="namername" placeholder="Fecha inicial">
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+
+                                                     </div>
+
+                                                 </div>
+                                                 <!--Calendar end-->
+                                             </div>
+                                             <div class="col-md-6 col-sm-6">
+                                                 <!-- Calendar start-->
+                                                 <div class="text-center">
+
+                                                     <div class="card calendarFinal col-md-12">
+                                                         <div class="item-hints">
+                                                             <div class="hint" data-position="4">
+                                                                 <!-- is-hint -->
+                                                                 <span class="hint-radius"></span>
+                                                                 <span class="hint-dot">
+                                                                     <br>
+                                                                     <i class="fas fa-calendar-alt fa-3x animated infinite pulse delay-2s calendar_stl"></i>
+                                                                 </span>
+                                                                 <div class=" text-center hint-content do--split-children text-left" style="color:#f8942d; text-shadow: 0 0 3px #000;">
+                                                                     <p>Haz click.</p>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="card-text">
+                                                             <div class="text-center">
+                                                                 <!-- <i class="fas fa-exclamation-circle" style="color: #4F7E97;"></i> Selecciona una fecha final. -->
+                                                                 <div id="namer">
+                                                                     <div id="namer-input">
+                                                                         <input id="calendarioFechaFinal" type="text" name="namername" placeholder="Fecha final">
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+
+                                                     </div>
+
+                                                 </div>
+                                                 <!--Calendar end-->
+                                             </div>
+                                           </div>
+                                         </div>
+                                         <!-- Final filtro por fechas section -->
+                                     </div>
+
+                                     <!-- Botones de busqueda -->
+                                     <div class="row justify-content-center">
+                                       <p class="text-center mr-4">
+                                           <button class="btn btn-primary global_btn" id="btn-filtrar-movimientos-fechas" type="button">
+                                               <i class="fas fa-dolly-flatbed"></i> Filtrar por fechas
+                                           </button>
+                                       </p>
+                                         <p class="text-center mr-5">
+                                             <button class="btn btn-primary global_btn" id="btn-filtrar-movimientos-todos" type="button">
+                                                 <i class="fas fa-dolly-flatbed"></i> Mostrar todos
+                                             </button>
+                                         </p>
+                                     </div>
+                                     <!-- Fin de botones de busqueda -->
+
+
+
+                                 </div>
+                                 <!-- Container detalles de pedidos -->
+                                 <div class="row">
+                                     <div class="col-xl-12 col-md-12 mb-4">
+
+                                         <div class="row justify-content-md-center">
+
+                                             <div class="col-md-12">
+
+                                                 <div class="row" id="container-pedidos" style="overflow: auto">
+                                                     <hr>
+                                                 </div>
+
+                                                 <br>
+                                                 <br>
+
+                                                 <div class="row" id="container-pedidos-detalles" style="overflow: auto"></div>
+
+                                             </div>
+
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <!-- Final de container detalles de pedidos -->
+
+                             </div>
+                         </div>
+                     </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
 
 <app-footer></app-footer>

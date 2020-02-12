@@ -15,6 +15,8 @@ import { DashboardAdminComponent } from "./components/dashboard-admin/dashboard-
 //Tienda
 import { TiendaComponent } from "./components/tienda/tienda.component";
 import { CarritoComponent } from "./components/carrito/carrito.component";
+import { PagoComponent } from "./components/tienda/pago/pago.component";
+import { EntregaComponent } from "./components/tienda/entrega/entrega.component";
 
 //Error-pagina
 import { ErrorComponent } from "./components/error/error.component";
@@ -40,8 +42,9 @@ const appRoutes: Routes = [
   {path: 'dashboard_asistente', component: DashboardAsistenteComponent, data: { animation: 'isRight' }},
   {path: 'dashboard_admin/:parent', component: DashboardAdminComponent, data: { animation: 'isRight' }},
   {path: 'dashboard_admin', component: DashboardAdminComponent, data: { animation: 'isRight' }},
-  {path: 'tienda/:parent', component: TiendaComponent, data: { animation: 'isRight' }},
   {path: 'tienda', component: TiendaComponent, data: { animation: 'isRight' }},
+  {path: 'pago', component: PagoComponent, data: { animation: 'isRight' }},
+  {path: 'entrega', component: EntregaComponent, data: { animation: 'isRight' }},
   {path: '**', component: ErrorComponent, data: { animation: 'isRight' }}
 ];
 

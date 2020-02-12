@@ -1,1 +1,120 @@
-<p>tienda works!</p>
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="alert pasos-alert" role="alert">
+      <div class="text-center" id="pagina-mensaje"><br>
+      	<h3><i class="fas fa-book"></i> Compra</h3>
+      </div>
+      <br>
+
+      <div class="row">
+      	<div class="col-xs-12 col-md-12 text-center">
+      		<nav class="nav nav-pills flex-column flex-sm-row">
+      			<a class="flex-sm-fill text-sm-center nav-link active" href="#" id="paso-compra"><i class="fas fa-shopping-cart"></i> Compra</a>
+      			<a class="flex-sm-fill text-sm-center nav-link disabled" href="#"><i class="fas fa-circle"></i></a>
+      			<a class="flex-sm-fill text-sm-center nav-link disabled" href="#" id="paso-confirmacion"><i class="fas fa-credit-card"></i> Pago</a>
+      			<a class="flex-sm-fill text-sm-center nav-link disabled" href="#"><i class="fas fa-circle"></i></a>
+      			<a class="flex-sm-fill text-sm-center nav-link disabled" href="#" id="paso-entrega"><i class="fas fa-parachute-box"></i> Entrega</a>
+      		</nav>
+      	</div>
+      </div>
+  </div>
+
+  <div class="row">
+  	<div class="col-xs-12 col-md-12 mb-4">
+  		<div class="card shadow">
+  			<div class="card-header">
+  			    <h5><i class="fas fa-user"></i><strong> Tus datos</strong></h5>
+  			    (regresa al paso <strong>1. Registro</strong> si deseas hacer algún cambio)</div>
+  			<div class="card-body">
+  				<div class="row">
+  					<div class="col-xs-3 col-md-3">
+  						<strong>Comprador</strong>
+  						<p class="card-text" id="confirmacion-usuario"></p>
+  					</div>
+  					<div class="col-xs-3 col-md-3">
+  						<strong id="confirmacion-usuario-identificador"></strong>
+  						<p class="card-text" id="confirmacion-usuario-matricula"></p>
+  					</div>
+  					<div class="col-xs-3 col-md-3">
+  						<strong>Teléfono</strong>
+  						<p class="card-text" id="confirmacion-usuario-telefono"></p>
+  					</div>
+  					<div class="col-xs-3 col-md-3">
+  						<strong>Correo Electrónico</strong>
+  						<p class="card-text" id="confirmacion-usuario-login"></p>
+  					</div>
+  				</div>
+  				<br>
+  				<div class="row">
+  					<div class="col-xs-6 col-md-6">
+  						<strong>Escuela</strong>
+  						<p class="card-text" id="confirmacion-escuela-seleccionada"></p>
+  					</div>
+  					<div class="col-xs-3 col-md-3">
+  						<strong>Programa</strong>
+  						<p class="card-text" id="confirmacion-programa-seleccionado"></p>
+  					</div>
+  					<div class="col-xs-3 col-md-3">
+  						<strong>Niveles</strong>
+  						<p class="card-text" id="confirmacion-programa-nivel-seleccionado"></p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+  <div class="row" id="tienda-articulo">
+  	<div class="col-xs-3 col-md-3 mb-4">
+  		<div class="card shadow">
+  			<div class="card-header">
+  			    <h6>
+  			        <i class="fas fa-layer-group"></i><strong> 1. Nivel</strong>
+  			    </h6>
+  			</div>
+  			<div class="card-body">
+  				<div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical" id="compra-niveles">
+  				</div>
+  			</div>
+  		</div>
+  		<br>
+  		<div class="card shadow">
+  			<div class="card-header"><i class="fas fa-exclamation-triangle" style="color:#FEB138;"></i><strong> IMPORTANTE </strong><i class="fas fa-exclamation-triangle" style="color:#FEB138;"></i></div>
+  			<div class="card-body">
+  				Si aún no has realizado tu <strong>PLACEMENT TEST</strong> o aún no sabes en que nivel de Inglés te encuentras, elige <strong>NIVEL POR ASIGNAR</strong> y selecciona el libro <strong>American JETSTREAM Nivel Por Asignar</strong> para proceder con tu compra, realiza tu pago y conserva tu ticket.<br><br>
+  				<strong>Tu universidad</strong> te asignará el nivel que deberás de cursar y podrás recoger tu libro correspondiente entregando tu recibo de pago en las fechas indicadas por la administración.
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-xs-6 col-md-6 mb-4">
+  		<div class="card shadow">
+  			<div class="card-header">
+  			    <h6>
+  			    <i class="fas fa-book"></i><strong> 2. Libros en el nivel</strong>
+  			    </h6>
+  			 </div>
+  			<div class="card-body">
+  				<div class="row" id="compra-articulos">
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-xs-3 col-md-3 mb-4">
+  		<div class="card shadow">
+  			<div class="card-header">
+  			    <h6>
+  			    <i class="fas fa-credit-card"></i><strong> 3. Pagar</strong>
+  			    </h6>
+  			</div>
+  			<div class="card-body text-center">
+  				<button type="button" class="btn btn-success" id="carrito-validar"><i class="fas fa-credit-card"></i> Pagar</button>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+  <br>
+  <br>
+</div>
+
+<app-footer></app-footer>

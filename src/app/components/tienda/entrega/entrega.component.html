@@ -1,0 +1,172 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="alert pasos-alert" role="alert">
+    <div class="text-center" id="pagina-mensaje"><br>
+    	<h2><i class="fas fa-truck-loading"></i> Entrega</h2>
+    </div>
+    <br>
+    <br>
+
+    <div class="row">
+    	<div class="col-xs-12 col-md-12">
+    		<nav class="nav nav-pills flex-column flex-sm-row">
+    			<a class="flex-sm-fill text-sm-center nav-link disabled" href="#" id="paso-compra"><i class="fas fa-shopping-cart"></i> Compra</a>
+    			<a class="flex-sm-fill text-sm-center nav-link disabled" href="#"><i class="fas fa-circle"></i></a>
+    			<a class="flex-sm-fill text-sm-center nav-link disabled" href="#" id="paso-confirmacion"><i class="fas fa-credit-card"></i> Pago</a>
+    			<a class="flex-sm-fill text-sm-center nav-link disabled" href="#"><i class="fas fa-circle"></i></a>
+    			<a class="flex-sm-fill text-sm-center nav-link active" href="#" id="paso-entrega"><i class="fas fa-parachute-box"></i> Entrega</a>
+    		</nav>
+    	</div>
+    </div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-md-12 mb-4">
+		<div class="card shadow h-100">
+			<div class="card-header card_head_stl"><i class="fas fa-cash-register"></i><strong> Detalles de tu pago</strong></div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-6" id="pago-detalles">
+
+					</div>
+					<div class="col-md-6">
+						<div class="card text-center">
+						  <div class="card-header card_head_stl">
+						    <h4>Tu código QR</h4>
+						  </div>
+						  <div class="card-body body_card">
+						    <div id="entrega-codigo-qr"></div>
+						  <br>
+						  	<div id="descargar_miQr"></div>
+
+						  </div>
+						  <div class="card-footer card_head_stl">
+						    Click derecho sobre el código y descarga tu código QR.
+						  </div>
+						</div>
+					</div>
+
+				</div>
+
+
+				<div class="row" id="venta-devuelta-aviso-1" style="display:none;">
+                    <div class="col-xs-12 col-md-12">
+                    	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    		<i class="fas fa-money-bill-alt"></i><strong> ¡EL PAGO DE ESTA VENTA HA SIDO REEMBOLSADO, LO VERÁS REFLEJADO EN TU CUENTA BANCARIA EN APROXIMADAMENTE 24 HRS!</strong>
+                    	</div>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-md-12" id="detalles-print">
+		<div class="card shadow">
+			<div class="card-header card_head_stl"><i class="fas fa-money-bill-wave"></i><strong id="print-titulo-detalles"> Detalles de tu compra</strong></div>
+			<div class="card-body">
+				<div class="row mb-12">
+					<div class="col-xs-3 col-md-3">
+						<strong>Número de la compra</strong>
+						<p class="card-text" id="entrega-venta-id"></p>
+					</div>
+					<div class="col-xs-3 col-md-3">
+						<strong>Fecha y hora de la compra</strong>
+						<p class="card-text" id="entrega-venta-fecha-hora"></p>
+					</div>
+					<div class="col-xs-3 col-md-3">
+						<strong>Fecha de entrega prevista en tu escuela</strong>
+						<p class="card-text" id="entrega-venta-fecha-entrega"></p>
+					</div>
+					<div class="col-xs-3 col-md-3">
+						<strong>Estatus de pago</strong>
+						<p class="card-text" id="entrega-venta-estatus"></p>
+					</div>
+				</div>
+				<br>
+				<hr>
+				<div class="row mb-12">
+					<div class="col-sm-6">
+						<div><strong>Dirección de entrega</strong></div>
+						<hr>
+						<div id="escuela-nombre"></div>
+						<div id="escuela-campus"></div>
+						<div id="escuela-calle"></div>
+						<div id="escuela-ciudad"></div>
+						<div id="escuela-estado"></div>
+						<div id="escuela-codigo-postal"></div>
+						<div id="entrega-codigo-qr"></div>
+					</div>
+					<div class="col-sm-6">
+						<div><strong>Entregar a</strong></div>
+						<hr>
+						<div id="usuario-nombre"></div>
+						<div id="usuario-login"></div>
+						<div id="usuario-matricula"></div>
+						<div id="usuario-telefono"></div>
+					</div>
+				</div>
+				<br>
+				<div class="table-responsive-sm" id="table-responsiv-print">
+					<table class="table table-striped" id="entrega-articulos-formato">
+					</table>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-sm-5">
+					</div>
+					<div class="col-lg-4 col-sm-5 ml-auto">
+						<table class="table table-clear" id="entrega-totales-formato">
+						</table>
+					</div>
+				</div>
+
+                <div class="row" id="venta-devuelta-aviso-2" style="display:none">
+                    <div class="col-xs-12 col-md-12">
+                    	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    		<i class="fas fa-money-bill-alt"></i><strong> ¡EL PAGO DE ESTA VENTA HA SIDO REEMBOLSADO, LO VERÁS REFLEJADO EN TU CUENTA BANCARIA EN APROXIMADAMENTE 24 HRS!</strong>
+                    	</div>
+                    </div>
+                </div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-xs-12 col-md-12 mb-4">
+		<div class="card shadow h-100">
+			<div class="card-header card_head_stl"><i class="fas fa-info-circle"></i><strong> Información adicional</strong></div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<button type="button" class="btn btn-link" id="imprimir-comprobante"><i class="fas fa-print"></i> Imprime tu comprobante</button>
+						<button type="button" class="btn btn-link" id="cambia-tu-pedido"><i class="fas fa-exchange-alt"></i> Cambia el libro de tu compra</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+
+						<hr>
+						<h6>• Haz click <a class="links-style" data-toggle="modal" data-target="#factura-modal" href="#">aquí</a> si necesitas una factura de tu compra. Ten a la mano tu número de compra ya que te será solicitado.</h6>
+						<hr>
+						<div class="row">
+							<div class="col-xs-12 col-md-12 mb-2">
+								<a href="registro.php" style="text-decoration:none;"><button type="button" class="btn btn-primary btn-block"><i class="fas fa-shopping-cart"></i> Iniciar una nueva compra</button></a>
+							</div>
+							<div class="col-xs-12 col-md-12 mb-2">
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<app-footer></app-footer>

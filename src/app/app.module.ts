@@ -19,6 +19,8 @@ import { TiendaComponent } from './components/tienda/tienda.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NavbarComponent } from './components/global/navbar/navbar.component';
 import { FooterComponent } from './components/global/footer/footer.component';
+import { PagoComponent } from './components/tienda/pago/pago.component';
+import { EntregaComponent } from './components/tienda/entrega/entrega.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { FooterComponent } from './components/global/footer/footer.component';
     TiendaComponent,
     ErrorComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PagoComponent,
+    EntregaComponent
   ],
   imports: [
     BrowserModule,

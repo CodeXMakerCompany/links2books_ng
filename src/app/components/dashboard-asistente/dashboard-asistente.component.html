@@ -1,4 +1,148 @@
 <app-navbar></app-navbar>
-<p>dashboard-asistente works!</p>
+
+<div class="container-fluid">
+  <br>
+  <div class="row">
+      <div class="col-xs-12 col-md-12 mb-4">
+          <div class="card shadow">
+              <div class="card-header card_head_stl">
+                  <h5>
+                      <div class="col-md-12 row">
+                          <div><i class="fas fa-dolly-flatbed"></i> Asistente de entregas</div>
+                      </div>
+                  </h5>
+              </div>
+              <!-- end card header -->
+              <div class="card-body">
+                  <div class="panel-body">
+                      <div class="row">
+                          <div class="col-xl-12 col-md-12">
+                              <div class="form-group">
+
+                                  <div class="row" id="user-data">
+                                      <div class="col-xl-12 col-md-12">
+                                          <form id="tienda-form-usuario">
+                          					<div class="form-row">
+                          						<input type="hidden" id="usuario-id" name="usuario-id" value="5134">
+                          						<input type="hidden" id="usuario-idescuela" name="usuario-idescuela" value="282">
+                          						<input type="hidden" id="usuario-idprograma" name="usuario-idprograma" value="16">
+                          						<input type="hidden" id="usuario-escuela-nombre" name="usuario-escuela-nombre" value="My School">
+                          						<input type="hidden" id="usuario-programa-nombre" name="usuario-programa-nombre" value="My School English Program">
+                          						<input type="hidden" id="usuario-programa-nivel" name="usuario-programa-nivel" value="">
+                          					</div>
+                          					<div class="form-row">
+                          						<div class="col-md-4 mb-3">
+                          							<label for="usuario-nombre"><strong>Nombre(s)</strong></label>
+                          							<input type="text" class="form-control is-valid" id="usuario-nombre" name="usuario-nombre" placeholder="Nombre" value="" disabled>
+                          							<div class="invalid-feedback">Por favor completa este campo</div>
+                          						</div>
+                          						<div class="col-md-4 mb-3">
+                          							<label for="usuario-apellido-paterno"><strong>Apellido Paterno</strong></label>
+                          							<input type="text" class="form-control is-valid" id="usuario-apellido-paterno" name="usuario-apellido-paterno" placeholder="Apellido Paterno" value="" disabled>
+                          							<div class="invalid-feedback">Por favor completa este campo</div>
+                          						</div>
+                          						<div class="col-md-4 mb-3">
+                          							<label for="usuario-apellido-materno"><strong>Apellido Materno</strong></label>
+                          							<input type="text" class="form-control is-valid" id="usuario-apellido-materno" name="usuario-apellido-materno" placeholder="Apellido Materno" value="" disabled>
+                          							<div class="invalid-feedback">Por favor completa este campo</div>
+                          						</div>
+                          					</div>
+                          					<br>
+                          					<div class="form-row">
+                          						<div class="col-md-4 mb-3">
+                          							<label for="usuario-matricula"><strong id="usuario-identificador">Matrícula</strong></label>
+                          							<input type="text" class="form-control is-valid" id="usuario-matricula" name="usuario-matricula" placeholder="Matrícula" value="" disabled>
+                          							<div class="invalid-feedback">Por favor completa este campo</div>
+                          						</div>
+                          						<div class="col-md-4 mb-3">
+                          							<div class="row">
+                          								<div class="col-md-4 mb-3">
+                          									<label for="usuario-lada"><strong>Lada</strong></label>
+                          									<input type="text" class="form-control is-valid" id="usuario-lada" name="usuario-lada" placeholder="Lada" value="" maxlength="3" onkeypress="return validarDatosNumericos(event)" disabled>
+                          									<div class="invalid-feedback">Por favor completa correctamente este campo</div>
+                          								</div>
+                          								<div class="col-md-8 mb-3">
+                          									<label for="usuario-telefono"><strong>Teléfono</strong></label>
+                          									<input type="text" class="form-control is-valid" id="usuario-telefono" name="usuario-telefono" placeholder="Telefono" maxlength="8" value="" onkeypress="return validarDatosNumericos(event)" disabled>
+                          									<div class="invalid-feedback">Por favor completa correctamenteeste campo</div>
+                          								</div>
+                          							</div>
+                          						</div>
+                          						<div class="col-md-4 mb-3">
+                          							<label for="usuario-login"><strong>Correo Electrónico</strong></label>
+                          							<input type="text" class="form-control is-valid" id="usuario-login" name="usuario-login" placeholder="Correo Electrónico" value="" disabled>
+                          							<div class="invalid-feedback">Por favor completa este campo</div>
+                          						</div>
+                          					</div>
+                          				</form>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12 col-md-12 mb-4">
+          <div class="card shadow">
+              <div class="card-header card_head_stl">
+                  <h5>
+                      <i class="fas fa-clipboard-list"></i>
+                      <strong> Historial de entregas </strong>
+                  </h5>
+              </div>
+              <!-- end card header -->
+              <div class="card-body">
+                  <div class="panel-body">
+
+                      <div class="row">
+                                      <div class="col-xl-12 col-md-12 mb-4">
+                                          <label> <strong>Realizar entregas en el siguiente programa</strong></label>
+                                          <select name="curso-select" id="curso-select" class="form-control selectpicker" data-show-subtext="true" data-live-search="true"></select>
+                                      </div>
+                                  </div>
+
+                                  <div class="row">
+                                      <div class="col-xl-4 col-md-4 mb-4"></div>
+                                      <div class="col-xl-4 col-md-4 mb-4 text-center">
+                                          <button type="button" class="btn btn-primary global_btn" id="realizar-entregas"><i class="fas fa-dolly-flatbed"></i> Entregar</button>
+                                      </div>
+                                  </div>
+
+                      <div class="col-xs-12 col-md-12 mb-3">
+                                      <div id="buttons" class="text-center"></div>
+
+                      </div>
+
+                      <div class="row">
+                          <div class="col-xl-12 col-md-12">
+                              <div class="form-group">
+
+                                  <div class="row">
+                                      <div class="col-xl-12 col-md-12 mb-4">
+                                              <div id="container-table-reports">
+                                                  <div class="col-xs-12 col-md-12">
+                                                      <table id="tabla-reportes-entregas" class="table table-striped table-bordered table-responsive">
+                                                      </table>
+                                                  </div>
+                                              </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
 
 <app-footer></app-footer>
