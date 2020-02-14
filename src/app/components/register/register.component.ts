@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   public href: string = "";
+  public route_parent;
   parent = false;
 
   constructor(private router: Router) { }
@@ -20,12 +21,18 @@ export class RegisterComponent implements OnInit {
     var res = str.split("/");
 
     //Validar ruta con parametro
-    if (res[2]) {
+    if (res[1]) {
       //Flag para comenzar a cargar los datos del parent.
       this.parent = true;
       //Split a la ruta para dividir por diagonales
-      console.log(res[2]);
+      console.log(res[1]);
+      this.route_parent = res[1];
+      localStorage.setItem('parent', JSON.stringify(this.route_parent));
     }
+  }
+
+  backpage(){
+    this.router.navigateByUrl(this.route_parent);
   }
 
 }

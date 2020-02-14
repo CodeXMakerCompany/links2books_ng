@@ -13,18 +13,48 @@
 
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
+					<!-- Login form starts -->
+					<form #loginForm="ngForm" (ngSubmit)="onSubmitLoginForm( loginForm.value )">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text" style="background-color:#4B6595!important;"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="username">
+							<input
+							class="form-control"
+              placeholder="Email"
+              type="email"
+              name="email"
+              (focus)="focus1 = true"
+              (blur)="focus1 = false"
+              #email = "ngModel"
+              [(ngModel)]="user.email"
+              required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+							>
+							<!-- Validacion -->
+            <small *ngIf="!email.valid && email.touched" class="invalid-feedback d-block">
+              El email no es válido.
+            </small>
+
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<span class="input-group-text" style="background-color:#4B6595!important;"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+							<input
+							class="form-control"
+              placeholder="Contraseña"
+              type="password"
+              name="password"
+              (focus)="focus2 = true"
+              (blur)="focus2 = false"
+              #password = "ngModel"
+              [(ngModel)]="user.password"
+							>
+							<!-- Validacion -->
+            <small *ngIf="!password.valid && password.touched" class="invalid-feedback d-block">
+              La contraseña no es válida.
+            </small>
+
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -33,25 +63,26 @@
 							</div>
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" name="button" class="btn login_btn"><i class="fas fa-sign-in-alt"></i> Iniciar sesion</button>
+				 	<button type="submit" name="button" class="btn login_btn" style="background-color:#4B6595!important;"><i class="fas fa-sign-in-alt"></i> Iniciar sesion</button>
 				   </div>
 					</form>
+					<!-- Login form ends -->
 				</div>
 
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						<a href="#" class="ml-2">Olvide mi contraseña</a>
+						<a class="btn ml-2 btn_hover">Olvide mi contraseña</a>
 					</div>
           <div class="d-flex justify-content-center links">
-						<a [routerLink]="['/registro']" class="ml-2">Registrarse como alumno</a>
+						<a (click)="toRegister()" class="btn ml-2 btn_hover">Registrarse como alumno</a>
 					</div>
 					<div class="d-flex justify-content-center links">
-						<a href="#">Terminos y condiciones</a>
+						<a class="btn btn_hover">Terminos y condiciones</a>
 					</div>
 				</div>
 
         <div class="text-center container">
-          <small>Links2Academy © {{year}}</small>
+          <small style="color:#383D3B;"><b>Links2Academy © {{year}}</b></small>
         </div>
 
 				<!-- Ejemplo de inner html -->

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
 //AnimacionRutas
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,7 +43,8 @@ import { EntregaComponent } from './components/tienda/entrega/entrega.component'
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [
       appRoutingProviders,

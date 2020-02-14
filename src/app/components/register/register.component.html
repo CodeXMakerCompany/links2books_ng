@@ -9,7 +9,7 @@
 						<span aria-hidden="true">×</span>
 					</button>
 				</div>
-				<div class="modal-body">
+				<!-- <div class="modal-body">
 					<div class="row">
                         <div class="col-md-12 mb-3">
                             <div class="container">
@@ -17,7 +17,7 @@
                             </div>
                         </div>
                     </div>
-				</div>
+				</div> -->
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 				</div>
@@ -128,7 +128,7 @@
 					<button class="btn btn-primary" type="submit"><i class="fas fa-graduation-cap"></i> Registrar</button>
 				</form>
 				<br>
-				<button type="button" class="btn btn-link" id="cancelar-registro" [routerLink]="['/login']"><i class="fas fa-arrow-left"></i> Cancelar y regresar a la página de login</button>
+				<button type="button" class="btn btn-link" id="cancelar-registro" (click)="backpage()"><i class="fas fa-arrow-left"></i> Cancelar y regresar a la página de login</button>
 			</div>
 		</div>
 

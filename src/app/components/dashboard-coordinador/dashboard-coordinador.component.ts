@@ -20,9 +20,9 @@ export class DashboardCoordinadorComponent implements OnInit {
     var res = str.split("/");
 
     //Validar ruta con parametro
-    if (res[2]) {
+    if (res[1]) {
       //Split a la ruta para dividir por diagonales
-      console.log(res[2]);
+      console.log(res[1]);
     }
   }
 

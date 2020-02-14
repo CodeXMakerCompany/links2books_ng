@@ -1,5 +1,5 @@
 .user_card {
-  height: 400px;
+  height: 420px;
   width: 350px;
   margin-top: auto;
   margin-bottom: auto;
@@ -18,7 +18,7 @@
   position: absolute;
   height: 170px;
   width: 170px;
-  top: -75px;
+  top: -120px;
   border-radius: 50%;
   background: #7E99CA;
   padding: 10px;
@@ -76,5 +76,13 @@
   outline: 0px !important;
 }
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-  background-color: #c0392b !important;
+  background-color: #4B6595 !important;
+}
+
+.btn_hover:hover{
+  color:white!important;
+  margin: black;
+  border-width: 3px;
+  border-bottom-color: #4B6595;
+  transition: all 0.4s;
 }
